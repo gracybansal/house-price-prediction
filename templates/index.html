@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>House Price Predictor</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    margin: 50px auto;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 95%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏠 House Price Prediction</h2>
+
+<form action="/predict" method="post">
+
+<input type="text" name="area" placeholder="Area (sq ft)" required>
+
+<select name="bedrooms">
+<option value="1">1 Bedroom</option>
+<option value="2">2 Bedrooms</option>
+<option value="3">3 Bedrooms</option>
+<option value="4">4 Bedrooms</option>
+</select>
+
+<select name="bathrooms">
+<option value="1">1 Bathroom</option>
+<option value="2">2 Bathrooms</option>
+<option value="3">3 Bathrooms</option>
+</select>
+
+<input type="text" name="age" placeholder="Age of House" required>
+
+<!-- ✅ NEW LOCATION DROPDOWN -->
+<select name="location">
+<option value="Delhi">Delhi</option>
+<option value="Noida">Noida</option>
+<option value="Gurgaon">Gurgaon</option>
+</select>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+<h3>{{ prediction_text }}</h3>
+
+</div>
+
+</body>
+</html>
